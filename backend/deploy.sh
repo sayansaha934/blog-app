@@ -10,6 +10,9 @@ sudo apt install -y python3 python3-pip
 # Set the port number for uvicorn
 PORT_NUMBER=8000
 
+python3 -m venv venv
+source venv/bin/activate
+
 # Install project dependencies
 pip install -r requirements.txt
 
