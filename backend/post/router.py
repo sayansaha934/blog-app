@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Request, Depends
+from fastapi import APIRouter
 from fastapi.responses import JSONResponse
 from .service import PostService
 from .request import CreatePostRequest, EditPostRequest
