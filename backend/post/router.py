@@ -36,8 +36,12 @@ def edit_post(id: str, args: EditPostRequest):
 @router.delete("/{id}")
 def delete_post(id: str):
     try:
-        PostService().delete_post(SESSION=SESSION, post_id=id)
+        is_deleted = PostService().delete_post(SESSION=SESSION, post_id=id)
         SESSION.close()
+        if not is_deleted:
+            return JSONResponse(
+            status_code=404, content={"message": "Post not found"}
+        ) 
         return JSONResponse(
             status_code=200, content={"message": "Post deleted successfully"}
         )
@@ -52,6 +56,10 @@ def get_post(id: str):
     try:
         post = PostService().get_post(SESSION=SESSION, post_id=id)
         SESSION.close()
+        if not post:
+            return JSONResponse(
+            status_code=404, content={"message": "Post not found"}
+        ) 
         return JSONResponse(status_code=200, content=post)
     except Exception as e:
         print(e)
