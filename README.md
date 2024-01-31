@@ -14,9 +14,9 @@
   git pull origin https://github.com/sayansaha934/blog-app.git
   sudo apt update
   sudo apt install -y python3 python3-pip tmux
+  cd backend
   pip install -r requirements.txt
   tmux new -s backend (to create a new session)
-  cd backend
   python3 -m uvicorn main:app --reload --port 800
   ``` 
 - Create a target group and attach it with the above EC2 instance
