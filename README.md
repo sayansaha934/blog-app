@@ -17,7 +17,7 @@
   cd backend
   pip install -r requirements.txt
   tmux new -s backend (to create a new session)
-  python3 -m uvicorn main:app --reload --port 8000
+  python3 -m uvicorn main:app  --port 8000 --host 0.0.0.0 --forwarded-allow-ips=*
   ``` 
 - Create a target group and attach it with the above EC2 instance
 - Create a load balancer and associate it with the target group
