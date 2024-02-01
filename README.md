@@ -11,7 +11,7 @@
 - Create a EC2 instance and conect with the instance
 - Run the following command
   ```
-  git pull origin https://github.com/sayansaha934/blog-app.git
+  git clone https://github.com/sayansaha934/blog-app.git
   sudo apt update
   sudo apt install -y python3 python3-pip tmux
   cd backend
